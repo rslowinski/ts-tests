@@ -4,7 +4,10 @@
   "main": "index.js",
   "scripts": {
     "start": "tsc && node dist/app.js",
-    "test": "mocha"
+    "test": "mocha -r ts-node/register test/LibraryTest.ts"
+  },
+  "directories": {
+    "test": "test"
   },
   "author": "",
   "license": "ISC",
