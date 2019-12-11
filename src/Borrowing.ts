@@ -1,7 +1,7 @@
 export class Borrowing {
     person: string;
-    fromDate: string;
-    toDate: string;
+    fromDate: Date;
+    toDate: Date;
 
     constructor(person, fromDate, toDate) {
         this.person = person;

@@ -1,8 +1,8 @@
 import { expect } from 'chai';
-import {Person} from "../src/Person";
-import {Book} from "../src/Book";
-import {Borrowing} from "../src/Borrowing";
-import {Library} from "../src/Library";
+import { Person } from "../src/Person";
+import { Book } from "../src/Book";
+import { Borrowing } from "../src/Borrowing";
+import { Library } from "../src/Library";
 
 function createLibrary() {
     const hamlet = new Book("#0", "Hamlet", "Sekspir");
@@ -97,15 +97,13 @@ describe('In library', function () {
         expect(book.returnBook(student)).to.eq(false);
     });
 
-
     it('one should be able to prolong borrowing', function () {
         const student = createPerson();
         const book = createLibrary().getFirstAvailableBookOrNull();
 
         book.borrowBook(student, 4);
 
-        let expectedDayAfterProlong = new Date();
-        expectedDayAfterProlong.setDate(book.currentBorrowing.toDate.getDate() + 3);
+        let expectedDayAfterProlong = new Date(book.currentBorrowing.toDate.getDate() + 3);
 
         book.prolong(student, 3);
         let afterProlongDate = new Date(book.currentBorrowing.toDate);

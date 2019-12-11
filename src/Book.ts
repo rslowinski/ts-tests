@@ -46,7 +46,7 @@ export class Book {
         }
 
         const borrowingDate = this.currentBorrowing.toDate;
-        this.currentBorrowing.toDate = this.currentBorrowing.toDate.setDate(borrowingDate.getDate() + duration);
+        this.currentBorrowing.toDate = new Date(borrowingDate.getDate() + duration);
 
         return true;
     }
